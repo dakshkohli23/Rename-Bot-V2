@@ -1,17 +1,17 @@
 {
-  "name": "Rename Bot",
-  "description": "A simple telegram file on media rename bot with permanent thumbnail support",
-  "keywords": ["telegram", "rename", "pyrogram"],
-  "success_url": "https://github.com/FayasNoushad",
-  "website": "https://githib.com/FayasNoushad/FayasNoushad",
-  "repository": "https://github.com/FayasNoushad/Rename-Bot",
+  "name": "RenameBot v2",
+  "description": "A Simple Telegram File or Media RenameBot v2 with Permanent Thumbnail Support",
+  "keywords": ["telegram", "rename", "pyrogram", "rename-bot"],
+  "success_url": "https://github.com/dakshkohli23",
+  "website": "https://github.com/dakshkohli23/Rename-Bot-V2",
+  "repository": "https://github.com/dakshkohli23/Rename-Bot-V2",
   "env": {
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode",
       "value": "ANYTHING"
     },
     "BOT_TOKEN": {
-      "description": "Your bot token, as a string."
+      "description": "Your Bot Token, as a String."
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org"
@@ -21,7 +21,7 @@
     },
     "AUTH_USERS": {
       "description": "allow only pre-defined users to use this bot",
-      "value": "1266681279"
+      "value": ""
     },
     "TIME_LIMIT": {
       "description": "For time to next process",
@@ -32,7 +32,7 @@
     {
     "plan": "heroku-postgresql",
       "options": {
-        "version": "12"
+        "version": "1"
       }
     }
   ],
