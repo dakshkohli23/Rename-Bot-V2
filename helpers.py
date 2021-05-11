@@ -28,7 +28,7 @@ async def progress_for_pyrogram(
             ''.join(["◇" for i in range(10 - math.floor(percentage / 10))]),
             round(percentage, 2))
 
-        tmp = progress + "<b>✔️ Completed:</b> {0} \n<b>🗄️ Total Size:</b> {1}\n<b>├ 🚄 Speed:</b> {2}/s\n<b>├ 🕰️ ETA:</b> {3}\n<b>│ </b>\n<b>╰─── ⌊` 💡 Dlaize `⌉</b".format(
+        tmp = progress + "<b>✔️ Completed:</b> {0} \n<b>🗄️ Total Size:</b> {1}\n<b>├ 🚄 Speed:</b> {2}/s\n<b>├ 🕰️ ETA:</b> {3}\n<b>│ </b>\n\n<b>⌊` 💡 Dlaize `⌉</b>".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
