@@ -36,6 +36,7 @@ python3 bot.py
 
 ### Credits
 
+- [Dlaize Kohli](https://github.com/dakshkohli23)
 - [Fayas Noushad](https://github.com/FayasNoushad)
 - [Shrimadhav UK](https://github.com/SpEcHIDe)
 - [Pranav Govind](https://github.com/prgofficial)
