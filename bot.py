@@ -1,8 +1,8 @@
 # Made with python3
-# (C) @FayasNoushad
+# (C) @Dlaize
 # Copyright permission under GNU General Public License v3.0
-# All rights reserved by FayasNoushad
-# License -> https://github.com/FayasNoushad/Rename-Bot/blob/main/LICENSE
+# All rights reserved by Dlaize
+# License -> https://github.com/dakshkohli23/Rename-Bot-V2/blob/main/LICENSE
 
 import logging
 logging.basicConfig(level=logging.DEBUG,
@@ -30,9 +30,9 @@ AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split( ))
 PROCESS_MAX_TIMEOUT = int(os.environ.get("TIME_LIMIT"))
 ADL_BOT_RQ = {}
 START_TEXT = """
-Hello {} , I'am a simple file or media rename bot with permanent thumbnail support.
+Hello {},\nI'm a Simple Telegram File or Media RenameBot v2 with Permanent Thumbnail Support. 🔥
 
-Made by @FayasNoushad
+Made by Mr. @Dlaize
 """
 HELP_TEXT = """
 <b><u>Rename</u></b>
@@ -48,40 +48,40 @@ HELP_TEXT = """
 <b><u>Show Thumbnail</u></b>
 ➠ Send /showthumb for view current thumbnail.
 
-Made by @FayasNoushad
+Made by @Dlaize
 """
 ABOUT_TEXT = """
-- **Bot :** `Rename Bot`
-- **Creator :** [Fayas](https://telegram.me/TheFayas)
-- **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
-- **Credits :** `Everyone in this journey`
-- **Source :** [Click here](https://github.com/FayasNoushad/Rename-Bot)
-- **Language :** [Python3](https://python.org)
-- **Library :** [Pyrogram v1.2.0](https://pyrogram.org)
-- **Server :** [Heroku](https://heroku.com)
+- **⮞ Bot :** `RenameBot v2`
+- **⮞ Creator :** [Dlaize](https://telegram.me/Dlaize)
+- **⮞ Channel :** [Cartoon Series](https://telegram.me/cartoon_seriesz)
+- **⮞ Credits :** `Everyone in this Journey`
+- **⮞ Source :** [Click here](https://github.com/dakshkohli23/Rename-Bot-V2)
+- **⮞ Language :** [Python3](https://python.org)
+- **⮞ Library :** [Pyrogram v1.2.0](https://pyrogram.org)
+- **⮞ Server :** [Heroku](https://heroku.com)
 """
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        InlineKeyboardButton('Index Channel', url='https://telegram.me/cartoon_seriesz'),
+        InlineKeyboardButton('Feedback', url='https://telegram.me/Dlaize')
         ],[
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('About', callback_data='about'),
-        InlineKeyboardButton('Close', callback_data='close')
+        InlineKeyboardButton('♨️ Help', callback_data='help'),
+        InlineKeyboardButton('ⓘ About', callback_data='about'),
+        InlineKeyboardButton('✖ Close', callback_data='close')
         ]]
     )
 HELP_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Home', callback_data='home'),
-        InlineKeyboardButton('About', callback_data='about'),
-        InlineKeyboardButton('Close', callback_data='close')
+        InlineKeyboardButton('⌂ Home', callback_data='home'),
+        InlineKeyboardButton('ⓘ About', callback_data='about'),
+        InlineKeyboardButton('✖ Close', callback_data='close')
         ]]
     )
 ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Home', callback_data='home'),
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('Close', callback_data='close')
+        InlineKeyboardButton('⌂ Home', callback_data='home'),
+        InlineKeyboardButton('♨️ Help', callback_data='help'),
+        InlineKeyboardButton('✖ Close', callback_data='close')
         ]]
     )
 
@@ -160,7 +160,7 @@ async def save_photo(bot, update):
         )
         await bot.send_message(
             chat_id=update.chat.id,
-            text="Thumbnail Saved ✅ This Is Permanent",
+            text="<b>🖼️ Thumbnail Saved ☑️\nThis Is Permanent Until</b> /delthumb ",
             reply_to_message_id=update.message_id
         )
 
@@ -179,7 +179,7 @@ async def delete_thumbnail(bot, update):
         pass
     await bot.send_message(
         chat_id=update.chat.id,
-        text="Thumbnail cleared succesfully!",
+        text="<b>🖼️ Thumbnail cleared succesfully🤦</b>",
         reply_to_message_id=update.message_id
     )
 
@@ -207,7 +207,7 @@ async def show_thumb(bot, update):
     else:
         await bot.send_message(
             chat_id=update.chat.id,
-            text="No thumbnails found!",
+            text="<b>🖼️ No thumbnails found ☠️</b>",
             reply_to_message_id=update.message_id
         )
 
@@ -238,9 +238,9 @@ async def filter(bot, update):
         filename = "None"
     await bot.send_message(
         chat_id=update.chat.id,
-        text=f"<b>File Name</b> : <code>{filename}</code> \n\nSelect the desired option below 😇",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="📝 RENAME 📝", callback_data="rename")],
-                                                [InlineKeyboardButton(text="✖️ CANCEL ✖️", callback_data="cancel")]]),
+        text=f"<b>📂 File Name</b> : <code>{filename}</code> \n\nSelect the desired option below 😇",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🖊️ RENAME", callback_data="rename")],
+                                                [InlineKeyboardButton(text="✖ CANCEL", callback_data="cancel")]]),
         parse_mode="html",
         reply_to_message_id=update.message_id,
         disable_web_page_preview=True
@@ -251,12 +251,12 @@ async def cus_name(bot, message):
     if (message.reply_to_message.reply_markup) and isinstance(message.reply_to_message.reply_markup, ForceReply):
         asyncio.create_task(rename(bot, message))
     else:
-        print('No media present')
+        print('<b>⚠️ No Media Present</b>')
 
 async def force_name(bot, message):
     await bot.send_message(
         message.reply_to_message.from_user.id,
-        text="Enter new name for media with file type\n\nExample :- <code>sample.mkv | media</code>",
+        text="Enter New Name for Media with File Type\n\nExample :- <code>sample.mkv | media</code>",
         reply_to_message_id=message.reply_to_message.message_id,
         reply_markup=ForceReply(True)
     )
@@ -271,9 +271,9 @@ async def rename(bot, message):
     if (" | " in message.text) and (message.reply_to_message is not None):
         file_name, file_type = message.text.split(" | ", 1)
         if len(file_name) > 64:
-            await message.reply_text(text=f"Limits of telegram file or media name spellings is 64 characters only.")
+            await message.reply_text(text=f"You Gotta Be Kidding Me...Decrease The Number Of Letters😆😉\n[64 Characters]")
             return
-        description = "<b>" + file_name + "</b>"
+        description = "<b>📁 File Name : " + file_name + "</b>"
         download_location = DOWNLOAD_LOCATION + "/"
         thumb_image_path = download_location + "FayasNoushad " + str(message.from_user.id) + ".jpg"
         if not os.path.exists(thumb_image_path):
@@ -283,21 +283,21 @@ async def rename(bot, message):
                 await m.download(file_name=thumb_image_path)
                 thumb_image_path = thumb_image_path
 
-        a = await bot.send_message(chat_id=message.chat.id, text="<code>Downloading To My server Please Wait...</code>", reply_to_message_id=message.message_id)
+        a = await bot.send_message(chat_id=message.chat.id, text="<code>Downloading 📥</code>", reply_to_message_id=message.message_id)
         c_time = time.time()
         the_real_download_location = await bot.download_media(
             message=media,
             file_name=download_location,
             progress=progress_for_pyrogram,
-            progress_args=("<code>Downloading To My server Please Wait...</code>", a, c_time)
+            progress_args=("<code>Downloading 📥</code>", a, c_time)
         )
         if the_real_download_location is not None:
-            await bot.edit_message_text(text="<code>Downloaded Successfully! Now I am Uploading to Telegram...</code>", chat_id=message.chat.id, message_id=a.message_id)
+            await bot.edit_message_text(text="<code>Downloaded Successfully! Now I am Uploading to TG...</code>", chat_id=message.chat.id, message_id=a.message_id)
             new_file_name = download_location + file_name
             os.rename(the_real_download_location, new_file_name)
             # logger.info(the_real_download_location)
             try:
-                await bot.edit_message_text(text="<code>Downloaded Successfully! Now I am Uploading to Telegram...</code>", chat_id=message.chat.id, message_id=a.message_id)
+                await bot.edit_message_text(text="<code>Downloaded Successfully! Now I am Uploading to TG...</code>", chat_id=message.chat.id, message_id=a.message_id)
             except:
                 pass
             if os.path.exists(thumb_image_path):
@@ -321,10 +321,10 @@ async def rename(bot, message):
                     video=new_file_name,
                     thumb=thumb_image_path,
                     caption=description,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚙ Join Updates Channel ⚙', url='https://telegram.me/FayasNoushad')]]),
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚙ Join Updates Channel ⚙', url='https://telegram.me/cartoon_seriesz')]]),
                     reply_to_message_id=message.reply_to_message.message_id,
                     progress=progress_for_pyrogram,
-                    progress_args=("<code>Downloaded Successfully! Now I am Uploading to Telegram...</code>", a, c_time)
+                    progress_args=("<code>Uploading 📤</code>", a, c_time)
                 )
                 try:
                     os.remove(new_file_name)
@@ -334,7 +334,7 @@ async def rename(bot, message):
                     os.remove(thumb_image_path)
                 except:
                     pass
-                await bot.edit_message_text(text="<b>Thank you for Using Me</b>", chat_id=message.chat.id, message_id=a.message_id, disable_web_page_preview=True)
+                await bot.edit_message_text(text="<b>Thank you for Using Me SHARE > ❤️</b>", chat_id=message.chat.id, message_id=a.message_id, disable_web_page_preview=True)
                 return
             if "file" in file_type:
                 await bot.send_document(
@@ -342,10 +342,10 @@ async def rename(bot, message):
                     document=new_file_name,
                     thumb=thumb_image_path,
                     caption=description,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚙ Join Updates Channel ⚙', url='https://telegram.me/FayasNoushad')]]),
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚙ Join Updates Channel ⚙', url='https://telegram.me/cartoon_seriesz')]]),
                     reply_to_message_id=message.reply_to_message.message_id,
                     progress=progress_for_pyrogram,
-                    progress_args=("<code>Downloaded Successfully! Now I am Uploading to Telegram...</code>", a, c_time)
+                    progress_args=("<code>Uploading 📤</code>", a, c_time)
                 )
                 try:
                     os.remove(new_file_name)
@@ -355,7 +355,7 @@ async def rename(bot, message):
                     os.remove(thumb_image_path)
                 except:
                     pass
-                await bot.edit_message_text(text="<b>Thank you for Using Me</b>", chat_id=message.chat.id, message_id=a.message_id, disable_web_page_preview=True)
+                await bot.edit_message_text(text="<b>Thank you for Using Me SHARE > ❤️</b>", chat_id=message.chat.id, message_id=a.message_id, disable_web_page_preview=True)
                 return
         else:
             await bot.send_message(chat_id=message.chat.id, text="You're not Authorized to do that!", reply_to_message_id=message.message_id)
