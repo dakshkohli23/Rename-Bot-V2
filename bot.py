@@ -235,7 +235,7 @@ async def filter(bot, update):
     try:
         filename = file.file_name
     except:
-        filename = "file.file_name"
+        filename = file.file_name
     await bot.send_message(
         chat_id=update.chat.id,
         text=f"<b>📂 File Name</b> : <code>{filename}</code> \n\nSelect the desired option below 😇",
