@@ -100,7 +100,7 @@ FayasNoushad = Client(
 async def cb_handler(bot, update):
     if update.data == "home":
         await update.message.edit_text(
-            text=START_BUTTONS.format(update.from_user.mention),
+            text=START_TEXT.format(update.from_user.mention),
             reply_markup=START_BUTTONS,
             disable_web_page_preview=True
         )
