@@ -235,7 +235,7 @@ async def filter(bot, update):
     try:
         filename = file.file_name
     except:
-        filename = "None"
+        filename = "file.file_name"
     await bot.send_message(
         chat_id=update.chat.id,
         text=f"<b>📂 File Name</b> : <code>{filename}</code> \n\nSelect the desired option below 😇",
@@ -321,7 +321,7 @@ async def rename(bot, message):
                     video=new_file_name,
                     thumb=thumb_image_path,
                     caption=description,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚙ Join Updates Channel ⚙', url='https://telegram.me/cartoon_seriesz')]]),
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚡ Join Updates Channel ⚡', url='https://telegram.me/cartoon_seriesz')]]),
                     reply_to_message_id=message.reply_to_message.message_id,
                     progress=progress_for_pyrogram,
                     progress_args=("<code>Uploading 📤</code>", a, c_time)
