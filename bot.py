@@ -51,14 +51,13 @@ HELP_TEXT = """
 Made by @Dlaize
 """
 ABOUT_TEXT = """
-- **⮞ Bot :** `RenameBot v2`
-- **⮞ Creator :** [Dlaize](https://telegram.me/Dlaize)
-- **⮞ Channel :** [Cartoon Series](https://telegram.me/cartoon_seriesz)
-- **⮞ Credits :** `Everyone in this Journey`
-- **⮞ Source :** [Click here](https://github.com/dakshkohli23/Rename-Bot-V2)
-- **⮞ Language :** [Python3](https://python.org)
-- **⮞ Library :** [Pyrogram v1.2.0](https://pyrogram.org)
-- **⮞ Server :** [Heroku](https://heroku.com)
+**🎗️ Bot :** `RenameBot v2`
+**🎗️ Creator :** [Dlaize](https://telegram.me/Dlaize)
+**🎗️ Channel :** [Cartoon Series](https://telegram.me/cartoon_seriesz)
+**🎗️ Source :** [Click here](https://github.com/dakshkohli23/Rename-Bot-V2)
+**🎗️ Language :** [Python3](https://python.org)
+**🎗️ Library :** [Pyrogram v1.2.0](https://pyrogram.org)
+**🎗️ Server :** [Heroku](https://heroku.com)
 """
 START_BUTTONS = InlineKeyboardMarkup(
         [[
