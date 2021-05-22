@@ -53,7 +53,7 @@ Made by @Dlaize
 ABOUT_TEXT = """
 **🎗️ Bot :** `RenameBot v2`
 **🎗️ Creator :** [Dlaize](https://telegram.me/Dlaize)
-**🎗️ Channel :** [Cartoon Series](https://telegram.me/cartoon_seriesz)
+**🎗️ Channel :** [Compass Bots](https://telegram.me/compass_botz)
 **🎗️ Source :** [Click here](https://github.com/dakshkohli23/Rename-Bot-V2)
 **🎗️ Language :** [Python3](https://python.org)
 **🎗️ Library :** [Pyrogram v1.2.0](https://pyrogram.org)
@@ -288,7 +288,7 @@ async def rename(bot, message):
             message=media,
             file_name=download_location,
             progress=progress_for_pyrogram,
-            progress_args=("<code>Downloading 📥</code>", a, c_time)
+            progress_args=("<b>Downloading 📥</b>\n", a, c_time)
         )
         if the_real_download_location is not None:
             await bot.edit_message_text(text="<code>Downloaded Successfully! Now I am Uploading to TG...</code>", chat_id=message.chat.id, message_id=a.message_id)
@@ -323,7 +323,7 @@ async def rename(bot, message):
                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚡ Join Updates Channel ⚡', url='https://telegram.me/cartoon_seriesz')]]),
                     reply_to_message_id=message.reply_to_message.message_id,
                     progress=progress_for_pyrogram,
-                    progress_args=("<code>Uploading 📤</code>", a, c_time)
+                    progress_args=("<b>Uploading 📤</b>\n", a, c_time)
                 )
                 try:
                     os.remove(new_file_name)
